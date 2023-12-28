@@ -22,6 +22,7 @@ const createAdminAccount = async () => {
 
             // If the admin is not created, save the user into the database .... : .... else return and breake the function...ex
             if (!existingUser && roles && hashPassword) {
+                
                 const user = new UserModel({
                     email:      userObject.email,
                     password:   hashPassword,
