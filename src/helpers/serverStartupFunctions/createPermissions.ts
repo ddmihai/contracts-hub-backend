@@ -1,4 +1,4 @@
-import PermissionModel, { PermissionNames } from "../models/permission.model"
+import PermissionModel, { PermissionNames } from "../../models/permission.model"
 
 export const automaticallyCreatePermission = async () => {
     let ADMIN = new PermissionModel({ name: PermissionNames.ADMIN });

@@ -1,4 +1,4 @@
-import bcryptjs from 'bcryptjs';
+import * as bcryptjs from 'bcryptjs';
 
 const hashPassword = async (plainPassword: string) => {
     if (plainPassword.trim().length < 8) {

@@ -1,7 +1,7 @@
-import { userObject } from "../config/envirnomentVariables";
-import hashPasswordFunc from "../helpers/hashPassword";
-import PermissionModel from "../models/permission.model";
-import UserModel from "../models/user.model";
+import { userObject } from "../../config/envirnomentVariables";
+import hashPasswordFunc from "../hashPassword";
+import PermissionModel from "../../models/permission.model";
+import UserModel from "../../models/user.model";
 
 /**
  *  1. Get the existing users if there are any 
