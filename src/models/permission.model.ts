@@ -13,7 +13,8 @@ const Permission = new mongoose.Schema({
     name: {
         type: String,
         enum: Object.values(PermissionNames),
-        required: true
+        required: true,
+        trim: true
     }
 });
 
