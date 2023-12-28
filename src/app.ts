@@ -12,6 +12,9 @@ app.use(express.json());
 import userRouter from './routers/user.routes';
 
 
+// Home route
+app.use('/', (req, res, next) => res.status(200).json({ message: 'Wellcome to contract-r' }));
+
 // Use routes here
 app.use('/api/v1', userRouter);
 

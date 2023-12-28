@@ -7,6 +7,8 @@ const app = express();
 app.use(express.json());
 // Import routes here
 const user_routes_1 = require("./routers/user.routes");
+// Home route
+app.use('/', (req, res, next) => res.status(200).json({ message: 'Wellcome to contract-r' }));
 // Use routes here
 app.use('/api/v1', user_routes_1.default);
 // App 404 error handler route
