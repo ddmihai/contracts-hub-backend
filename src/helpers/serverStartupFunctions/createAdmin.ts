@@ -34,8 +34,12 @@ const createAdminAccount = async () => {
 
                 return await user.save();
             }
+
+            // If there is already a user established in the database, than return false
+            else return false;
         }
-        else return false;
+            // If the user is not inside the env file -> than is not an admin and return false
+            else return false;
     } 
     catch (error) {
         console.error(error);

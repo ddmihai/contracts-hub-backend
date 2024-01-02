@@ -23,6 +23,7 @@ const handleStartServer = async () => {
     await initConnectionToDatabase();
     await automaticallyCreatePermission();
     await createAdminAccount();
+    
 }
 
 

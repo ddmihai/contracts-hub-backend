@@ -7,7 +7,8 @@ const userRouter = Router();
  *          1.  admin use link to send invitation by email to client
 */
 import { registerClientInvitation } from "../controllers/users/registerClientInvitation.controller";
-userRouter.post('/auto-register', registerClientInvitation);
+userRouter.route('/invitation-register')
+    .post(registerClientInvitation);
 
 
 

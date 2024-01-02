@@ -1,11 +1,21 @@
 import * as express from 'express';
 import { appErrorHandlerHelper, appErrorNotFoundHandlerHelper } from './helpers/app-helpers/errorHandler';
+import path = require('path');
+
 
 const app: express.Express = express();
 
 
-// Basic middlewares init
+/**
+ * Basic middlewares init
+ * Express handlebars set of static files
+ * Static files and CSS modules
+*/     
 app.use(express.json());
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'views'));
+app.use('/public', express.static(path.join(__dirname, 'public')));
+
 
 
 // Import routes here
