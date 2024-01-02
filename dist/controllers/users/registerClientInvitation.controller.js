@@ -25,8 +25,7 @@ const registerClientInvitation = (req, res, next) => __awaiter(void 0, void 0, v
         const template = handlebars.compile(hbsTemplateContent);
         // Create an invitation
         const invitation = yield invitations_model_1.default.create({ email: clientEmail });
-        const linkEndpointForRegister = req.protocol + '://' + req.get('host') + '/create-account' + invitation._id;
-        // const linkEndpointForRegister = req.protocol + '://' + req.get('host') + '/api/v1/invitation-register/' + invitation._id;
+        const linkEndpointForRegister = req.protocol + '://' + req.get('host') + '/create-account/' + invitation._id;
         // Data to be populated the HBS and email
         const templateData = {
             title: 'Account invitation',
