@@ -35,7 +35,9 @@ app.get('/', (req, res, next) => res.status(200).json({ message: 'Wellcome to co
 // Use routes here
 app.use('/api/v1', userRouter);
 
-
+app.get('/api/test', (req, res) => {
+    res.status(200).send('testing route')
+})
 
 
 // 404 error...

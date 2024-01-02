@@ -18,9 +18,11 @@ export const registerClientInvitation = async (req: Request, res: Response, next
         const hbsTemplateContent = await fs.promises.readFile(hbsTemplatePath, 'utf-8');
         const template = handlebars.compile(hbsTemplateContent);
 
+        // Create an invitation
         const invitation = await InvitationModel.create({ email: clientEmail });
         const linkEndpointForRegister = req.protocol + '//' + req.get('host') + '/' + invitation._id
 
+        // Data to be populated the HBS and email
         const templateData = { 
             title:              'Account invitation',
             clientEmail:        clientEmail, 
@@ -40,13 +42,16 @@ export const registerClientInvitation = async (req: Request, res: Response, next
             });  
         } 
     } 
-    catch (error : unknown) {
+
+    // Catch the errors
+    catch (error: unknown) {
         if (error instanceof Error) {
             if (error.message && error.message.split(' ')[0] == 'E11000') {
                 return next(new CustomErrorRouteHandler('User already invited', 500, 'failed'));
             }
         }
 
-       return next(new CustomErrorRouteHandler('Error while creating an invitation', 500, 'failed'));
+
+        return next(new CustomErrorRouteHandler('Error while creating an invitation', 500, 'failed'));
     }
 }
