@@ -37,7 +37,7 @@ app.use('/api/v1', userRouter);
 
 app.get('/api/test', (req, res) => {
     res.status(200).send('testing route')
-})
+});
 
 
 // 404 error...

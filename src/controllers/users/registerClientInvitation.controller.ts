@@ -51,7 +51,7 @@ export const registerClientInvitation = async (req: Request, res: Response, next
             }
         }
 
-
+        console.log(error);
         return next(new CustomErrorRouteHandler('Error while creating an invitation', 500, 'failed'));
     }
 }

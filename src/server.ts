@@ -12,7 +12,7 @@ import createAdminAccount from "./helpers/serverStartupFunctions/createAdmin";
 const port = process.env.PORT || 3001;
 const server = http.createServer(app);
 
-server.on('listening', () => console.log('Server online'));
+server.on('listening', () => console.log('Server online ' + port));
 server.on('error', (error: any) => console.log(error));
 
 
