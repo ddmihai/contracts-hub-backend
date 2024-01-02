@@ -7,5 +7,5 @@ const userRouter = (0, express_1.Router)();
  *          1.  admin use link to send invitation by email to client
 */
 const registerClientInvitation_controller_1 = require("../controllers/users/registerClientInvitation.controller");
-userRouter.post('/auto-register', registerClientInvitation_controller_1.registerClientInvitation);
+userRouter.route('/invitation-register').post(registerClientInvitation_controller_1.registerClientInvitation);
 exports.default = userRouter;

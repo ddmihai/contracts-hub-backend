@@ -17,7 +17,7 @@ const createPermissions_1 = require("./helpers/serverStartupFunctions/createPerm
 const createAdmin_1 = require("./helpers/serverStartupFunctions/createAdmin");
 const port = process.env.PORT || 3001;
 const server = http.createServer(app_1.default);
-server.on('listening', () => console.log('Server online'));
+server.on('listening', () => console.log('Server online ' + port));
 server.on('error', (error) => console.log(error));
 const handleStartServer = () => __awaiter(void 0, void 0, void 0, function* () {
     server.listen(port);
