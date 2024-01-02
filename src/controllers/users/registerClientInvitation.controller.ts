@@ -11,7 +11,7 @@ import { log } from "console";
 
 export const registerClientInvitation = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const { clientName, clientEmail, invitationLink } = req.body;   
+        const { clientName, clientEmail } = req.body;   
 
         // get the htmlTemplate path and make it a string
         let hbsTemplatePath = path.join(__dirname, '..', '..', 'views', 'emails', 'invitation.hbs');

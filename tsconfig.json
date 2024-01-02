@@ -3,8 +3,12 @@
     "target": "es6",
     "module": "commonjs",
     "strict": true,
-    "rootDir": "./src", // Adjust 'rootDir' to match your project's source directory
+    "rootDir": "./src", 
     "outDir": "./dist"
   },
-  "include": ["src/**/*"] // Adjust the 'include' pattern to match your source files
+
+
+  "include": [
+    "src/**/*",
+    "src/views/emails/*.hbs"] // Adjust the 'include' pattern to match your source files
 }

@@ -18,7 +18,7 @@ const handlebars = require("handlebars"); // Import Handlebars
 const invitations_model_1 = require("../../models/invitations.model");
 const registerClientInvitation = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { clientName, clientEmail, invitationLink } = req.body;
+        const { clientName, clientEmail } = req.body;
         // get the htmlTemplate path and make it a string
         let hbsTemplatePath = path.join(__dirname, '..', '..', 'views', 'emails', 'invitation.hbs');
         const hbsTemplateContent = yield fs.promises.readFile(hbsTemplatePath, 'utf-8');
