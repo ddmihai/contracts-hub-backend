@@ -31,11 +31,11 @@ const sendEmailHTML = (clientEmail, subject, htmlContent) => __awaiter(void 0, v
     };
     transporter.sendMail(mailOptions, error => {
         if (error) {
-            console.error("Error sending email", error);
+            console.error('Error sending email', error);
+            return 'Error sending email';
         }
         else {
-            console.log("Email sent");
-            return "Email sent";
+            return 'Email sent';
         }
     });
 });

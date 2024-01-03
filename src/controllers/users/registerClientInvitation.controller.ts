@@ -5,7 +5,6 @@ import path = require("path");
 import { sendEmailHTML } from "../../helpers/sendBasicEmials/nodemailer";
 import * as handlebars from 'handlebars'; // Import Handlebars
 import InvitationModel from "../../models/invitations.model";
-import { log } from "console";
 
 
 

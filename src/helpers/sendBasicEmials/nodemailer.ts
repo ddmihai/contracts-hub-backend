@@ -23,11 +23,11 @@ export const sendEmailHTML = async (clientEmail: string, subject: string, htmlCo
 
     transporter.sendMail(mailOptions, error => {
         if (error) {
-          console.error("Error sending email", error);
+          console.error('Error sending email', error);
+          return 'Error sending email';
         } 
         else {
-          console.log("Email sent");
-          return "Email sent";
+          return 'Email sent';
         }
     });
 }
