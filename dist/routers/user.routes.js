@@ -9,5 +9,5 @@ const userRouter = (0, express_1.Router)();
 const registerClientInvitation_controller_1 = require("../controllers/users/registerClientInvitation.controller");
 const clientRegister_controller_1 = require("../controllers/users/clientRegister.controller");
 userRouter.route('/invitation-register').post(registerClientInvitation_controller_1.registerClientInvitation);
-userRouter.route('/create-account/').get(clientRegister_controller_1.clientSignup);
+userRouter.route('/create-account/:invitationId').get(clientRegister_controller_1.clientSignup);
 exports.default = userRouter;

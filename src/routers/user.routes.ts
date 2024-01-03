@@ -11,7 +11,7 @@ import { clientSignup } from "../controllers/users/clientRegister.controller";
 
 
 userRouter.route('/invitation-register').post(registerClientInvitation);
-userRouter.route('/create-account/').get(clientSignup);
+userRouter.route('/create-account/:invitationId').get(clientSignup);
 
 
 

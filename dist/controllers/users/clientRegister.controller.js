@@ -10,9 +10,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.clientSignup = void 0;
+const invitations_model_1 = require("../../models/invitations.model");
 const clientSignup = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        res.render('/clients/signup');
+        const { invitationId } = req.params;
+        const { firstName, lastName, email, password, phone } = req.body;
+        //the role will be automatically provided in the model
+        const invitationChecker = yield invitations_model_1.default.findOne({ _id: invitationId });
+        if (invitationChecker)
+            return res.render('clients/signup');
+        else
+            return res.render('/clients/invalid-invitation');
     }
     catch (error) {
         res.send(error);

@@ -11,12 +11,16 @@ const app: express.Express = express();
  * Express handlebars set of static files
  * Static files and CSS modules
 */     
+const environment = process.env.NODE_ENV || 'development';
 app.use(express.json());
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 app.use('/public', express.static(path.join(__dirname, 'public')));
-// app.set('views', path.join(__dirname, 'dist', 'views'));
 
+
+if (environment === 'production') {
+    app.set('views', path.join(__dirname, 'dist', 'views'));
+}
 
 
 // Import routes here

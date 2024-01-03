@@ -19,7 +19,9 @@ export const registerClientInvitation = async (req: Request, res: Response, next
 
         // Create an invitation
         const invitation = await InvitationModel.create({ email: clientEmail });
-        const linkEndpointForRegister = req.protocol + '://' + req.get('host') + '/create-account/' + invitation._id
+        const linkEndpointForRegister = req.protocol + '://' + req.get('host') + '/api/v1/create-account/' + invitation._id
+        console.log(linkEndpointForRegister);
+
 
         // Data to be populated the HBS and email
         const templateData = { 
