@@ -19,7 +19,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 
 
 if (environment === 'production') {
-    app.set('views', path.join(__dirname, 'dist', 'views'));
+    app.set('views', path.join(__dirname, 'views'));
 }
 
 

@@ -15,7 +15,7 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 app.use('/public', express.static(path.join(__dirname, 'public')));
 if (environment === 'production') {
-    app.set('views', path.join(__dirname, 'dist', 'views'));
+    app.set('views', path.join(__dirname, 'views'));
 }
 // Import routes here
 const user_routes_1 = require("./routers/user.routes");
